@@ -21,278 +21,316 @@
     <title>Patient Registration form</title>
   </head>
   <body>
-    <form action="" class="patient-registration-form">
-      <header>
-        <nav><a href="">New Registration</a></nav>
+    <div class="container">
+      <aside>
 
-        <div class="header-content">
-          <div>
-            <h1>Patient Registration Form</h1>
+      </aside>
+      <form action="" class="patient-registration-form">
+        <div class="header">
+          <nav>Patient > <a href="">New Registration</a></nav>
+
+          <div class="header-content">
+            <div>
+              <h1>Patient Registration Form</h1>
+              <p>
+                Register a new patient into the <b>Abojuto</b> NHIA clinical
+                database system.
+              </p>
+            </div>
+
+            <button class="outline-btn">Cancel</button>
+          </div>
+        </div>
+
+        <section class="profile-section">
+          <div class="profile-section-image">
+            <img
+              id="profile_image_preview"
+              src="../assets/icons/upload-icon.png"
+              alt="Profile Placeholder"
+            />
+
+            <!-- <div class="camera-icon">
+      📷
+    </div> -->
+
+            <!-- <button class="edit-btn" id="editBtn"><img src="../assets/icons/edit-button.png" /></button> -->
+          </div>
+
+          <div class="profile-section-content">
+            <h2>Profile Photo</h2>
             <p>
-              Register a new patient into the <b>Abojuto</b> NHIA clinical
-              database system.
+              Upload a clear passport photograph of the patient for
+              identification. Max 2MB
             </p>
-          </div>
 
-          <button class="outline-btn">Cancel</button>
-        </div>
-      </header>
+            <button id="uploadBtn" type="button" class="outline-btn">
+              Select Image
+            </button>
 
-      <section class="profile-section">
-        <div class="profile-section-image">
-          <img
-            id="profile_image_preview"
-            src="./images/icons/upload-icon.png"
-            alt="Profile Placeholder"
-          />
-        </div>
-        <div class="profile-section-content">
-          <img src="./images/icons/edit-button.png" id="edit-button" alt="" />
-          <h2>Profile Photo</h2>
-          <p>
-            Upload a clear passport photograph of the patient for
-            identification. Max 2MB
-          </p>
-          <button type="submit" id="uploadBtn" class="outline-btn">
-            Select Image
-          </button>
-          <input
-            type="file"
-            id="profile_pic_input"
-            name="profile_pic"
-            accept="image/*"
-            hidden
-          />
-        </div>
-      </section>
-
-      <section class="bio-data_section">
-        <div class="section-heading">
-          <img src="./images/icons/profile-Icon.png" alt="" />
-          <h2>Bio-Data Information</h2>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="fName">First Name</label>
             <input
-              type="text"
-              name="fName"
-              id="fName"
-              placeholder="Enter first name"
+              type="file"
+              id="profile_pic_input"
+              name="profilePhoto"
+              accept="image/*"
+              hidden
             />
           </div>
+        </section>
 
-          <div>
-            <label for="sName">Surname</label>
-            <input
-              type="text"
-              name="sName"
-              id="sName"
-              placeholder="Enter first name"
-            />
+        <section class="bio-data_section">
+          <div class="section-heading">
+            <img src="../assets/icons/profile-Icon.png" alt="" />
+            <h2>Bio-Data Information</h2>
           </div>
-        </div>
 
-        <div class="form-row">
-          <div>
-            <label for="DOB">Date of Birth</label>
-            <input type="date" name="DOB" id="DOB" placeholder="mm/dd/yyyy" />
+          <div class="form-row">
+            <div>
+              <label for="fName">First Name</label>
+              <input
+                type="text"
+                name="fName"
+                id="fName"
+                placeholder="Enter first name"
+              />
+            </div>
+
+            <div>
+              <label for="sName">Surname</label>
+              <input
+                type="text"
+                name="sName"
+                id="sName"
+                placeholder="Enter Surname"
+              />
+            </div>
           </div>
-          <div>
-            <label for="gender">Gender</label>
 
-            <div class="gender-div">
-              <div>
-                <input type="radio" name="gender" value="m" id="Male" />
-                <label for="Male">Male</label>
-              </div>
+          <div class="form-row">
+            <div>
+              <label for="DOB">Date of Birth</label>
+              <input type="date" name="DOB" id="DOB" placeholder="mm/dd/yyyy" />
+            </div>
+            <div>
+              <label for="gender">Gender</label>
 
-              <div>
-                <input type="radio" name="gender" value="f" id="Female" />
-                <label for="Female">Female</label>
+              <div class="gender-div">
+                <div>
+                  <input type="radio" name="gender" value="m" id="Male" />
+                  <label for="Male">Male</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="gender" value="f" id="Female" />
+                  <label for="Female">Female</label>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="form-row">
+            <div>
+              <label for="mStatus">Marital Status</label>
+              <select>
+                <option>Single</option>
+                <option>Married</option>
+                <option>Divorced</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="allergies">Allergies</label>
+              <input
+                type="text"
+                name="allergies"
+                id="allergies"
+                placeholder="E.g. Chloroquine, Penicillin, latex"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="genotype">Genotype</label>
+              <select>
+                <option value="">Select Genotype</option>
+                <option value="AA">AA</option>
+                <option value="AS">AS</option>
+                <option value="SS">SS</option>
+                <option value="AC">AC</option>
+                <option value="SC">SC</option>
+                <option value="CC">CC</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="blood-group">Blood Group</label>
+              <select>
+                <option value="">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="NHIA_section">
+          <div class="section-heading">
+            <img src="../assets/icons/NHIA-Icon.png" alt="" />
+            <h2>National Health Insurance Authority</h2>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="sName">NHIA Identification Number</label>
+              <input
+                type="text"
+                name="sName"
+                id="sName"
+                placeholder="e.g. NHIA12345678"
+              />
+            </div>
+
+            <div>
+              <label for="fName">NHIA Scheme Type</label>
+              <select name="NHIA_Scheme_type" id="">
+                <option>Formal Sector</option>
+                <option>Public Servant</option>
+                <option>Private Sector</option>
+                <option>Informal Sector</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact_details_section">
+          <div class="section-heading">
+            <img src="../assets/icons/location-Icon.png" alt="" />
+            <h2>Contact & Address Details</h2>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="sName">Phone Number</label>
+              <input
+                type="tel"
+                name="PNumber"
+                id="PNumber"
+                placeholder="+234 800 000 0000"
+              />
+            </div>
+
+            <div>
+              <label for="fName">Email Address (Optional)</label>
+              <input
+                type="text"
+                name="fName"
+                id="fName"
+                placeholder="patient@example.com"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="sName">Home Address</label>
+              <input
+                type="text"
+                name="Address"
+                id="Address"
+                placeholder="Home Number, Street name, Area"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="state_of_residence">State of Residence</label>
+              <select name="" id="state_of_residence">
+                <option value=""></option>
+              </select>
+            </div>
+
+            <div>
+              <label for="sName">Local Government Area (LGA)</label>
+              <input type="text" name="LGA" id="LGA" placeholder="Enter LGA" />
+            </div>
+          </div>
+        </section>
+
+        <section class="next_of_kin">
+          <div class="section-heading">
+            <img src="../assets/icons/emergency-Icon.png" alt="" />
+            <h2>Next of Kin / Emergency Contact</h2>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="fName_kin">Full Name</label>
+              <input
+                type="text"
+                name="fName_kin"
+                id="fName_kin"
+                placeholder="Full name of next of kin"
+              />
+            </div>
+
+            <div>
+              <label for="relationship_kin">Relationship</label>
+              <select
+                type="text"
+                name="sName"
+                id="sName"
+                placeholder="Enter first name"
+              >
+                <option value="Spouse">Spouse</option>
+                <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                <option value="Child">Child</option>
+                <option value="Cousin">Cousin</option>
+                <option value="Family">Family</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="PNumber_kin">Phone Number</label>
+              <input
+                type="tel"
+                name="PNumber_kin"
+                id="PNumber_kin"
+                placeholder="+234 800 000 0000"
+              />
+            </div>
+
+            <div>
+              <label for="address_kin">Emergency Address (Optional)</label>
+              <input
+                type="text"
+                name="address_kin"
+                id="address_kin"
+                placeholder="Same as parent / Different Address"
+              />
+            </div>
+          </div>
+        </section>
+
+        <div class="button-container">
+          <button class="outline-btn" type="reset">Discard Changes</button>
+          <button class="primary-btn" id="submitBtn" type="submit">
+            Complete Registration
+          </button>
         </div>
-
-        <div class="form-row">
-          <div>
-            <label for="mStatus">Marital Status</label>
-            <select>
-              <option>Single</option>
-              <option>Married</option>
-              <option>Divorced</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="state_of_origin">State of Origin</label>
-            <select id="state_of_origin"></select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="LGA_Of_Origin">LGA of Origin</label>
-            <input
-              type="text"
-              name="LGA_Of_Origin"
-              id="LGA_Of_Origin"
-              placeholder="Enter LGA"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="NHIA_section">
-        <div class="section-heading">
-          <img src="./images/icons/NHIA-Icon.png" alt="" />
-          <h2>National Health Insurance Authority</h2>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="sName">NHIA Identification Number</label>
-            <input
-              type="text"
-              name="sName"
-              id="sName"
-              placeholder="e.g. NHIA12345678"
-            />
-          </div>
-
-          <div>
-            <label for="fName">NHIA Scheme Type</label>
-            <select name="NHIA_Scheme_type" id="">
-              <option>Formal Sector</option>
-              <option>Public Servant</option>
-              <option>Private Sector</option>
-              <option>Informal Sector</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact_details_section">
-        <div class="section-heading">
-          <img src="./images/icons/profile-Icon.png" alt="" />
-          <h2>Contact & Address Details</h2>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="sName">Phone Number</label>
-            <input
-              type="tel"
-              name="PNumber"
-              id="PNumber"
-              placeholder="+234 800 000 0000"
-            />
-          </div>
-
-          <div>
-            <label for="fName">Email Address (Optional)</label>
-            <input
-              type="text"
-              name="fName"
-              id="fName"
-              placeholder="patient@example.com"
-            />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="sName">Home Address</label>
-            <input
-              type="text"
-              name="Address"
-              id="Address"
-              placeholder="Home Number, Street name, Area"
-            />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="state_of_residence">State of Residence</label>
-            <select name="" id="state_of_residence">
-              <option value=""></option>
-            </select>
-          </div>
-
-          <div>
-            <label for="sName">Local Government Area (LGA)</label>
-            <input type="text" name="LGA" id="LGA" placeholder="Enter LGA" />
-          </div>
-        </div>
-      </section>
-
-      <section class="next_of_kin">
-        <div class="section-heading">
-          <img src="./images/icons/emergency-Icon.png" alt="" />
-          <h2>Next of Kin / Emergency Contact</h2>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="fName_kin">Full Name</label>
-            <input
-              type="text"
-              name="fName_kin"
-              id="fName_kin"
-              placeholder="Full name of next of kin"
-            />
-          </div>
-
-          <div>
-            <label for="relationship_kin">Relationship</label>
-            <select
-              type="text"
-              name="sName"
-              id="sName"
-              placeholder="Enter first name"
-            >
-              <option value="Spouse">Spouse</option>
-              <option value="Brother">Brother</option>
-              <option value="Sister">Sister</option>
-              <option value="Child">Child</option>
-              <option value="Cousin">Cousin</option>
-              <option value="Family">Family</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div>
-            <label for="PNumber_kin">Phone Number</label>
-            <input
-              type="tel"
-              name="PNumber_kin"
-              id="PNumber_kin"
-              placeholder="+234 800 000 0000"
-            />
-          </div>
-
-          <div>
-            <label for="address_kin">Emergency Address (Optional)</label>
-            <input
-              type="text"
-              name="address_kin"
-              id="address_kin"
-              placeholder="Same as parent / Different Address"
-            />
-          </div>
-        </div>
-      </section>
-
-      <div class="button-container">
-        <button class="outline-btn" type="reset">Discard Changes</button>
-        <button class="primary-btn" type="submit">Complete Registration</button>
-      </div>
-    </form>
+      </form>
+    </div>
 
     <script src="../js/pages/patient.js"></script>
   </body>
