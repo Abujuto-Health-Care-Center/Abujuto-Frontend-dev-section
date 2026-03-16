@@ -87,7 +87,6 @@ profile_pic_input.addEventListener("change", function () {
 });
 
 //To handle form submission
-
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
