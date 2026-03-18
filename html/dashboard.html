@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link rel="stylesheet" href="../css/dashboard-style.css">
+	<title>Abujuto Health Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Aside-container -->
+      <aside class="side-bar">
+        <div class="logo">
+          <img src="../HTML.img/Abujuto Logo.png" alt="abujto">
+          <div class="logo-text">
+           <h2>Àbójútó</h2>
+           <p>ADMIN CENTER</p>
+        </div>
+        </div>
+         <nav class="nav-items">
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="#" class="nav-link">
+                <img src="../assets/icons/assets/icons/dashboard-Icon.png" alt="">
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/Patients-icon.png" alt="">
+                <span>Patients</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/Appointment.png" alt="">
+                <span>Appointments</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/consultation.png" alt="">
+                <span>Consultations</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/Money-icon.png" alt="">
+                <span>Billing</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/Messages.png" alt="">
+                <span>Messages</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/settings.png" alt="">
+                <span>Settings</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
+               <a href="#" class="nav-link-list">
+                <img src="../assets/icons/assets/icons/Logout.png" alt="">
+                <span>Logout</span>
+               </a>
+            </li>
+          </ul>
+         </nav>
+      </aside>
+      <!-- Aside-container End -->
+
+      <!-- Main-Section -->
+      <main class="main-content">
+          <!-- header-section -->
+        <header class="header">
+           <h1>Super Admin Dashboard</h1>
+           <div class="header-bar">
+            <div class="search-container">
+               <label for="search-input" class="visually-hidden"></label>
+               <img src="../assets/icons/assets/icons/search.png" alt="search">
+               <input type="search" id="search-input" placeholder="Search patients or records..">
+           </div>
+             <div class="header-icons">
+               <div class="notification-bell">
+                  <img src="../assets/icons/assets/icons/notification-bell.png" alt="notification">
+                  <img src="../assets/icons/assets/icons/Background+Border.png" alt="dot">
+               </div>
+               <div class="new-entry">
+                  <img src="../assets/icons/assets/icons/+ icon.png" alt="add-ntn">
+                  <h6>New Entry</h6>
+               </div>
+              </div>
+            </div>
+            
+         </header>
+        <!-- header-section-end -->
+
+        <!-- Statistics-Card -->
+         <div class="stats-card">
+            <div class="card-section">
+              <div class="card-top">
+               <img src="../assets/icons/assets/icons/Contact.png" alt="total-patient">
+               <div class="trend-bandge trend-up">
+                  <span>+12%</span>
+               </div>
+              </div>
+              <p class="card-label"> Total Patients</p>
+              <h2 class="card-value">12,840</h2>
+            </div>
+
+            <div class="card-section">
+              <div class="card-top">
+               <img src="../assets/icons/assets/icons/calendar.png" alt="today's visit">
+               <div class="trend-bandge trend-up">
+                  <span>+5%</span>
+               </div>
+              </div>
+              <p class="card-label"> Today's Visits</p>
+              <h2 class="card-value">42</h2>
+            </div>
+
+            <div class="card-section">
+              <div class="card-top">
+               <img src="../assets/icons/assets/icons/notepad.png" alt="pending consultations">
+               <div class="trend-bandge trend-down">
+                  <span>-2%</span>
+               </div>
+              </div>
+              <p class="card-label">Pending Consultations</p>
+              <h2 class="card-value">18</h2>
+            </div>
+
+            <div class="card-section">
+              <div class="card-top">
+               <img src="../assets/icons/assets/icons/Banknotes.png" alt="Monthly Revenue">
+               <div class="trend-bandge trend-up">
+                  <span>+8%</span>
+               </div>
+              </div>
+              <p class="card-label">Monthly Revenue</p>
+              <h2 class="card-value">₦25.4m</h2>
+            </div>
+          </div>
+          <!-- Statistics-card-end -->
+
+          <!-- Clinic-Performance -->
+           <section class="dashboard-container">
+               <!-- left-side-container-end -->
+                <div class="chart-card">
+                 <div class="card-header">
+                   <h3>Clinic Performance (Patient Trends)</h3>
+                  <div class="date-filter">
+                    <span>Last 7 Days</span>
+                     <img src="../assets/icons/assets/icons/Vector.png" alt="dropdown" class="dropdown-icon">
+                  </div>
+                 </div>
+                 <div class="chart-container">
+                   <img src="../assets/icons/assets/icons/Container.png" alt="contianer">
+                   <div class="days-container">
+                     <span>MON</span>
+                     <span>TUE</span>
+                     <span>WED</span>
+                     <span>THU</span>
+                     <span>FRI</span>
+                     <span>SAT</span>
+                     <span>SUN</span>
+                   </div>
+                 </div>
+                </div>
+                <!-- Left-side-container-end -->
+
+                <!-- Right-side-container-end -->
+                 <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <a href="#" class="quick-action-btn">
+                     Add New Patient
+                    </a>
+                    <a href="#" class="quick-action-btn">
+                     Schedule Visit
+                    </a>
+                    <a href="#" class="quick-action-btn">
+                     Issue Invoice
+                    </a>
+                 </div>
+
+           </section>
+      </main>
+    </div>
+    
+</body>
+</html>
