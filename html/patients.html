@@ -44,47 +44,122 @@
         </div>
 
         <div class="stat-container">
-            <div class="stat-card">
-              <div class="stat-icon green">
-                <img src="../assets/icons/total-patients-icon.png" alt="">
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <img src="../assets/icons/total-patients-icon.png" alt="" />
+            </div>
+            <div>
+              <div class="stat-label">Total Patients</div>
+              <div class="stat-value">1,284</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <img src="../assets/icons/active-today-icon.png" alt="" />
+            </div>
+            <div>
+              <div class="stat-label">Active Today</div>
+              <div class="stat-value">42</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">
+              <img src="../assets/icons/pending-labs.png" alt="" />
+            </div>
+            <div>
+              <div class="stat-label">Pending Labs</div>
+              <div class="stat-value">18</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon red">
+              <img src="../assets/icons/in-patients.png" alt="" />
+            </div>
+            <div>
+              <div class="stat-label">In Patient</div>
+              <div class="stat-value">7</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" onclick="setTab(this)">
+            All Patients
+          </button>
+          <button class="filter-tab" onclick="setTab(this)">
+            Recently Visited
+          </button>
+          <button class="filter-tab" onclick="setTab(this)">In-Patient</button>
+          <button class="filter-tab" onclick="setTab(this)">Discharged</button>
+        </div>
+
+        <div class="patient-cards">
+                   <div class="patient-card" id="patientCard">
+            <div class="card-header">
+              <img
+                src="../assets/icons/passport.jpg"
+                alt="Patient Avatar"
+                class="avatar"
+                id="patientAvatar"
+              />
+
+              <div class="patient-info">
+                <div class="name-row">
+                  <h2 class="patientName">Oluwaseun Adeyemi</h2>
+                  <span class="patient-id">PAT-2024-001</span>
+                </div>
+
+                <div class="details-row">
+                    <span class="patientGender">Male</span>
+                    <span class="patientAge">42 years</span>
+                    <span class="patientBlood">O+</span>
+                </div>
               </div>
-              <div>
-                <div class="stat-label">Total Patients</div>
-                <div class="stat-value">1,284</div>
+
+              <div class="visit-info">
+                <p class="label">LAST VISIT</p>
+                <p class="lastVisit">12 Oct 2023</p>
               </div>
             </div>
 
-            <div class="stat-card">
-              <div class="stat-icon blue">
-                <img src="../assets/icons/active-today-icon.png" alt="">
+            <div class="card-footer">
+              <p class="chiefComplaint">Chief Complaint: Hypertension Follow-up</p>
+
+              <div class="actions">
+                <button class="btn edit-btn"><img src="../assets/icons/edit-icon.png" alt="">Edit</button>
+                <button class="btn view-btn"><img src="../assets/icons/eye-Icon.png" alt="">View Profile</button>
               </div>
-              <div>
-                <div class="stat-label">Active Today</div>
-                <div class="stat-value">42</div>
-              </div>
+
             </div>
-
-            <div class="stat-card">
-              <div class="stat-icon orange">
-                <img src="../assets/icons/pending-labs.png" alt="">
-              </div>
-              <div>
-                <div class="stat-label">Pending Labs</div>
-                <div class="stat-value">18</div>
-              </div>
           </div>
+        </div>
 
-            <div class="stat-card">
-              <div class="stat-icon red">
-                <img src="../assets/icons/in-patients.png" alt="">
-              </div>
-              <div>
-                <div class="stat-label">In Patient</div>
-                <div class="stat-value">7</div>
-              </div>
-          </div>
-
-
+        <div class="pagination">
+          <span class="page-info">Showing 1–6 of 1,284 patients</span>
+          <ul class="pagination mb-0">
+            <li class="page-item disabled">
+              <a class="page-link" href="#"
+                ><i class="bi bi-chevron-left"></i
+              ></a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">&hellip;</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">215</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#"
+                ><i class="bi bi-chevron-right"></i
+              ></a>
+            </li>
+          </ul>
         </div>
       </main>
     </div>
