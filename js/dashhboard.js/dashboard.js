@@ -1,3 +1,8 @@
+import { renderSideBar } from "../components/sidebar.js";
+
+let sideBar = document.querySelector(".side-bar");
+sideBar.innerHTML = renderSideBar("dashboard");
+
 const ctx = document.getElementById('patientChart');
 
 new Chart(ctx, {
