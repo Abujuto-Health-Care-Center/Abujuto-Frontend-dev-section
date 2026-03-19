@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+main {
+  width: 960px;
+  padding: 2rem;
+  background-color: #f6f7f7;
+}

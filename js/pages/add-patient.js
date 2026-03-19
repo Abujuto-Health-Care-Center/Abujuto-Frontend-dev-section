@@ -96,7 +96,7 @@ form.addEventListener("submit", async function (e) {
   console.log(formData);
   console.log(patientData);
 
-validateInputs(patientData);
+  validateInputs(patientData);
 
   submitBtn.textContent = "Submitting...";
   submitBtn.disabled = true;
@@ -105,19 +105,18 @@ validateInputs(patientData);
   try {
     const response = await fetch("https://api.yourserver.com/patients", {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     //Response is back here
-    console.log(response)
+    console.log(response);
     if (!response.ok) {
       throw new Error(`Couldn't fetch`);
     }
 
-    
     const data = await response.json();
     console.log(data);
-    
+
     submitBtn.textContent = "Complete Registration";
     submitBtn.disabled = false;
     alert("Patient registered successfully!");
@@ -125,9 +124,15 @@ validateInputs(patientData);
     console.error(Error);
   }
 
-  form.reset()
+  form.reset();
 });
 
-function validateInputs(object) {
+function validateInputs(object) {}
 
-}
+
+//Import the sidebar
+
+import { renderSideBar } from "../components/sidebar.js";
+
+let sideBar = document.querySelector(".side-bar");
+sideBar.innerHTML = renderSideBar("patients");

@@ -6,21 +6,17 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #F8FAFC;
+  background-color: #f8fafc;
 }
 
 .container {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-
 }
 
-aside {
-  width: 256px;
-  background-color: #fff;
-  padding: 2rem;
-}
+/* FORM SECTION BEGINS */
+
 form {
   width: 960px;
   padding: 2rem;
@@ -53,8 +49,8 @@ section {
   align-items: center;
 }
 
-.nav-links li{
-text-decoration: none;
+.nav-links li {
+  text-decoration: none;
 }
 
 /* HEADER SECTION */
