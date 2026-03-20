@@ -17,6 +17,7 @@
 body {
     font-family: 'Inter', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -28,17 +29,20 @@ body {
     overflow: hidden;
     max-width: 1000px; 
     width: 100%;
-    height: 900px; 
+    border: 1p solid black;
+    /* height: 900px;    */
 }
+
 .left-panel {
     flex: 1;
-    background-color: #FFFFFF;
+    background-color: #c0c0c0;
     padding: 40px;
     display: flex;
+    box-shadow: 1px 1px 20px #6B7280;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .logo {
@@ -60,6 +64,7 @@ body {
     font-weight: 600;
     color: #2E6B50;
 }
+
 .left-content {
     margin-top: -60px; 
     padding: 0 20px; 
@@ -96,7 +101,7 @@ body {
     height: 600px;
     width: 600px;
     padding-top: 70px;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .footer-links {
@@ -112,6 +117,8 @@ body {
     align-items: center;
 }
 
+/* RIGHT PANEL */
+
 .right-panel {
     flex: 1;
     background: linear-gradient(to bottom, #2E6B50, #27463A, #1F2124);
@@ -119,15 +126,12 @@ body {
      color: #FFFFFF;
     display: flex;
     flex-direction: column;
-     justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    gap: 25px; 
+    /* gap: 25px;  */
 }
 .right-panel h2 {
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 .right-panel p {
     font-size: 16px;
@@ -381,6 +385,10 @@ body {
     background-color: #c7e1d5; 
 }
 
+
+
+
+/* FOOTER */
 .footer-text {
     margin-top: auto; 
     font-size: 14px;
