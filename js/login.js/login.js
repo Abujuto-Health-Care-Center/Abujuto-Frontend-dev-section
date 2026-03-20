@@ -63,7 +63,7 @@ async function handleLogin(e) {
   }
 
   // 2. "Staff ID" field maps to email in the API
-  const email        = document.getElementById('staff-id').value.trim();
+  const email  = document.getElementById('staff-id').value.trim();
   const password     = document.getElementById('password').value;
   const keepLoggedIn = document.getElementById('keep-logged-in').checked;
 
