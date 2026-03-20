@@ -128,12 +128,11 @@ obody {
 /* ── RIGHT PANEL ── */
 .right-panel {
   background: #1e3d2f;
- flex-shrink: 0;
+  flex-shrink: 0;
   border-radius: 20px;
   width: 50%;
   flex-grow: 1;
   padding: 2.4rem 2rem;
-
 }
 
 .right-panel h2 {
@@ -256,7 +255,7 @@ obody {
   width: 100%;
   padding: 1rem 1rem;
   background: #ffffff;
-  color: #2E6B50;
+  color: #2e6b50;
   border: 1.5px solid #2d5a40;
   border-radius: 10px;
   font-size: 1rem;
@@ -303,7 +302,7 @@ obody {
   width: 100%;
   padding: 1rem 1rem;
   background: #ffffff;
-  color: #2E6B50;
+  color: #2e6b50;
   border: 1.5px solid #2d5a40;
   border-radius: 10px;
   font-size: 0.9rem;
@@ -503,25 +502,28 @@ obody {
   font-size: 20px;
 }
 
+.copyright-bar {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #8a9e90;
+}
 
-    .copyright-bar {
-      margin-top: 1.2rem;
-      text-align: center;
-      font-size: 0.72rem;
-      color: #8a9e90;
-    }
+.copyright-bar strong {
+  color: #4a6e54;
+}
 
-    .copyright-bar strong { color: #4a6e54; }
+.copyright-bar .bar-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.3rem;
+}
 
-    .copyright-bar .bar-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 0.3rem;
-    }
-
-    .copyright-bar a {
-      color: #7a9e84;
-      text-decoration: none;
-    }
-    .copyright-bar a:hover { text-decoration: underline; }
+.copyright-bar a {
+  color: #7a9e84;
+  text-decoration: none;
+}
+.copyright-bar a:hover {
+  text-decoration: underline;
+}
