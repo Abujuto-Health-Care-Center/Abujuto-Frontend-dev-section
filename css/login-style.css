@@ -535,4 +535,24 @@ obody {
         flex-direction: column;
     }
     
+    .right-panel {
+        width: 100%;        
+    }
+
+.logo {
+    margin-bottom: 20px; 
+}
+    
+.left-content {
+    margin-top: 0;
+    padding: 0;
+}
+
+.left-content h1 {
+  font-size: 48px;
+  /* text-align: center; */
+margin-right: 0;
+line-height: 1.1;
+}
+
 }
