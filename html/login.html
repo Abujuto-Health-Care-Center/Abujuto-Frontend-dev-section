@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Àbójútó</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login-style.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="logo">
+                <img src="../HTML.img/Abujuto Logo.png" class="first-logo" alt="">
+                <h2>Àbójútó</h2>
+            </div>
+            <div class="left-content">
+                <h1>Where care is accounted for.</h1>
+                <p>Access your specialized dashboard with ease. 
+                <span class="bold">Àbójútó</span> provides tailored tools for every role in your healthcare facility.</p>
+                <div class="main-image-placeholder">
+                    <img src="../HTML.img/Abujuto Logo.png" alt="">
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#"><div class="icon-placeholder"><img src="../assets/icons/check-Icon.png" alt="">
+                </div> HIPAA Compliant</a>
+                <a href="#"><div class="icon-placeholder"><img src="../assets/icons/lock-icon.png" alt="">
+                </div> End-to-end Encrypted</a>
+            </div>
+        </div>
+
+        
+        <div class="right-panel">
+            <h2>Welcome Back</h2>
+            <p>Choose your role and sign in to continue</p>
+
+            <div class="role-selection">
+                <p>What Do You Do?</p>
+                <div class="role-buttons">
+                   <div class="doc-btn">
+                    <img src="../assets/icons/doctor-icon.png" alt="">
+                    <a href="#">Doctor</a>
+                   </div>
+                   <div class="nurse-btn">
+                    <img src="../assets/icons/nurse-icon.png" alt="">
+                    <a href="#">Nurse</a>
+                   </div>
+                    <div class="acct-btn">
+                    <img src="../assets/icons/acct-icon.png" alt="">
+                    <a href="#">Accountant</a>
+                   </div>
+                   <div class="admin-btn">
+                    <img src="../assets/icons/admin-icon.png" alt="">
+                    <a href="#">Admin</a>
+                   </div>
+                </div>
+            </div>
+
+            <form action="#" class="login-form"> 
+        <label for="staff-id" class="input-label">
+            <img src="../assets/icons/staff.png" alt="Staff ID Icon" class="label-icon"> 
+            <span>Staff ID</span> 
+        </label>
+        <input type="text" id="staff-id" class="input-field" placeholder="Enter your Staff ID">
+    </div>
+
+    <div class="input-group">
+        <label for="password" class="input-label">
+            <img src="../assets/icons/lock-icon.png" alt="Password Icon" class="label-icon"> 
+            <span>Password</span>
+        </label>
+        <div class="input-field-wrapper">
+            <input type="password" id="password" class="input-field" placeholder="••••••••">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <div class="icon-placeholder">👁️</div> 
+            </button>
+        </div>
+    </div>
+
+    <div class="checkbox-group">
+        <input type="radio" id="keep-logged-in" name="login-option">
+        <label for="keep-logged-in">Keep me logged in on this device</label>
+    </div>
+
+
+           </form>
+            <div class="login-button">
+                <a href="#">Secure Login</a>
+                <img src="../assets/icons/secure-icon.png" alt=""> 
+            </div>
+
+            <div class="footer-text">
+                Don't have an account? <a href="#">Contact Administrator</a>
+            </div>
+        </div>
+       
+
+    </div>
+     <footer class="site-footer">
+    <p class="copyright-text">© 2026 Àbójútó Systems. All Rights Reserved.</p>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">System Status</a>
+    </div>
+</footer>
+      
+    <script src="script.js"></script>
+</body>
+</html>
