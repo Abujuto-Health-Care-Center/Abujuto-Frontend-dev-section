@@ -59,7 +59,7 @@ return `<div class="logo">
             </li>
 
             <li class="nav-item  ${activePage === "logout" ? "active" : ""} ">
-               <a href="logout.html" class="nav-link-list">
+               <a href="../../index.html" class="nav-link-list">
                 <img src="../assets/icons/assets/icons/Logout.png" alt="">
                 <span>Logout</span>
                </a>
