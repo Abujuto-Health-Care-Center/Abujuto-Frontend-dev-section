@@ -17,6 +17,7 @@
 body {
   font-family: "Inter", sans-serif;
   display: flex;
+  background-color: #F6F7F8;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,17 +25,17 @@ body {
 
 .login-container {
   display: flex;
-  background-color: #ffffff;
+  /* background-color: #d47878; */
   border-radius: 12px;
   overflow: hidden;
   max-width: 1000px;
   width: 100%;
   border: 1p solid black;
-  /* height: 900px;    */
+   /* height: 900px;    */
 }
 
 .left-panel {
-  /* background-color: #c0c0c0; */
+  background-color: #fff;
   padding: 40px;
   display: flex;
   border-radius: 1rem;
