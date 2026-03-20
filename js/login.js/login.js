@@ -1,29 +1,118 @@
-const toggleBtn = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
-const eyeIcon = document.getElementById("eyeIcon");
+// ══════════════════════════════════════════
+//  CONFIG — set this to your backend URL
+// ══════════════════════════════════════════
+const BASE_URL = 'https://abojuto.onrender.com'; // ← change to your real server address
 
-const eyeOpen = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+// Where to send each role after login
+const ROLE_REDIRECTS = {
+  'doctor':       '../html/dashboard.html',
+  'nurse':        '../dashboard/nurse.html',
+  'accountant':   '../dashboard/accountant.html',
+  'admin':        '../dashboard/admin.html',
+  'receptionist': '../dashboard/receptionist.html',
+};
+
+// ── DOM refs ──
+const toggleBtn    = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
+const eyeIcon      = document.getElementById('eyeIcon');
+const loginBtn     = document.getElementById('loginBtn');
+const errorMessage = document.getElementById('errorMessage');
+const errorText    = document.getElementById('errorText');
+
+// ── Eye icon SVG paths ──
+const eyeOpen   = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
 const eyeClosed = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
 
-toggleBtn.addEventListener("click", () => {
-  const isPassword = passwordInput.type === "password";
-  passwordInput.type = isPassword ? "text" : "password";
-  eyeIcon.innerHTML = isPassword ? eyeClosed : eyeOpen;
+// ── Password toggle ──
+toggleBtn.addEventListener('click', () => {
+  const isPassword = passwordInput.type === 'password';
+  passwordInput.type = isPassword ? 'text' : 'password';
+  eyeIcon.innerHTML  = isPassword ? eyeClosed : eyeOpen;
 });
 
-// ── Form submit — collect role value ──
-document.getElementById("loginForm").addEventListener("submit", (e) => {
+// ── Helpers ──
+function showError(msg) {
+  errorText.textContent = msg;
+  errorMessage.classList.add('visible');
+}
+
+function clearError() {
+  errorMessage.classList.remove('visible');
+}
+
+function setLoading(on) {
+  loginBtn.classList.toggle('loading', on);
+}
+
+// Clear error as soon as the user starts typing again
+document.getElementById('loginForm').addEventListener('input', clearError);
+
+// ── Form submit ──
+document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+async function handleLogin(e) {
   e.preventDefault();
-  const role = document.querySelector('input[name="role"]:checked')?.value;
-  if (!role) {
-    alert("Please select your role before logging in.");
+  clearError();
+
+  // 1. Role must be selected
+  const selectedRole = document.querySelector('input[name="role"]:checked')?.value;
+  if (!selectedRole) {
+    showError('Please select your role before logging in.');
     return;
   }
-  const staffId = document.getElementById("staff-id").value.trim();
-  const password = document.getElementById("password").value;
-  const keepLoggedIn = document.getElementById("keep-logged-in").checked;
 
-  // Form data ready — send to your backend
-  console.log({ role, staffId, password, keepLoggedIn });
-  // fetch('/api/login', { method: 'POST', body: JSON.stringify({role, staffId, password, keepLoggedIn}) })
-});
+  // 2. "Staff ID" field maps to email in the API
+  const email        = document.getElementById('staff-id').value.trim();
+  const password     = document.getElementById('password').value;
+  const keepLoggedIn = document.getElementById('keep-logged-in').checked;
+
+  if (!email || !password) {
+    showError('Please enter your Staff ID and password.');
+    return;
+  }
+
+  // 3. Hit the API
+  setLoading(true);
+  try {
+    const response = await fetch(`${BASE_URL}/api/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    // 4. API returned an error (wrong password, user not found, etc.)
+    if (!response.ok) {
+      showError(data.message || data.error || 'Invalid credentials. Please try again.');
+      setLoading(false);
+      return;
+    }
+
+    // 5. Success — API returns { status, data: { token, user: { id, name, role } } }
+    if (data.status === 'success') {
+      const { token, user } = data.data;
+      const returnedRole = user.role.toLowerCase(); // "Doctor" → "doctor"
+
+      // 6. Save token — localStorage if "keep me logged in", sessionStorage if not
+      const storage = keepLoggedIn ? localStorage : sessionStorage;
+      storage.setItem('auth_token', token);
+      storage.setItem('auth_user', JSON.stringify(user));
+
+      // 7. Redirect to the correct dashboard based on server-confirmed role
+      const destination = ROLE_REDIRECTS[returnedRole] || '../dashboard/index.html';
+      window.location.href = destination;
+
+    } else {
+      showError(data.message || 'Login failed. Please try again.');
+      setLoading(false);
+    }
+
+  } catch (err) {
+    // Network failure / server is down
+    console.error('Login error:', err);
+    showError('Cannot reach the server. Check your connection and try again.');
+    setLoading(false);
+  }
+}
