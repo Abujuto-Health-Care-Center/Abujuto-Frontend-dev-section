@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} 
 
 body {
   font-family: "Inter", sans-serif;
@@ -227,4 +227,50 @@ label {
   gap: 0.75rem;
   padding: 1rem 0;
   justify-content: end;
+}
+
+
+/* ── FORM FEEDBACK ── */
+.form-error {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(220, 60, 60, 0.10);
+  border: 1px solid rgba(220, 60, 60, 0.30);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+}
+
+.form-error.visible { display: flex; }
+
+.form-success {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(46, 107, 80, 0.10);
+  border: 1px solid rgba(46, 107, 80, 0.30);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  color: #2e6b50;
+  margin-bottom: 0.5rem;
+}
+
+.form-success.visible { display: flex; }
+
+/* Loading state on submit button */
+.primary-btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Field-level error highlight */
+input.field-error,
+select.field-error {
+  border-color: #dc2626;
+  background-color: #fff5f5;
 }
