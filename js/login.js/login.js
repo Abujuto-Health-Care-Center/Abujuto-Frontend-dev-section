@@ -5,11 +5,11 @@ const BASE_URL = 'https://abojuto.onrender.com'; // ← change to your real serv
 
 // Where to send each role after login
 const ROLE_REDIRECTS = {
-  'doctor':       '../html/dashboard.html',
-  'nurse':        '../html/dashboard.html',
-  'accountant':   '../html/dashboard.html',
-  'admin':        '../html/dashboard.html',
-  'receptionist': '../html/dashboard.html',
+  'doctor':       '../../html/dashboard.html',
+  'nurse':        '../../html/dashboard.html',
+  'accountant':   '../../html/dashboard.html',
+  'admin':        '../../html/dashboard.html',
+  'receptionist': '../../html/dashboard.html',
 };
 
 // ── DOM refs ──
