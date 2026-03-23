@@ -583,47 +583,7 @@ flex-direction: column;
     }
     .btn-remove:hover { background: #ffe5e5; }
 
-    /* ── HAMBURGER BUTTON ── */
-.hamburger-btn {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.hamburger-btn span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #1e293b;
-  border-radius: 2px;
-  transition: all 0.25s ease;
-}
-
-/* Animated X when open */
-.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger-btn.open span:nth-child(2) { opacity: 0; }
-.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* ── SIDEBAR OVERLAY (mobile) ── */
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 99;
-}
-
-.sidebar-overlay.visible { display: block; }
-
+  
 /* ── PATIENT SEARCH SUGGESTIONS ── */
 .select-patient {
   position: relative;

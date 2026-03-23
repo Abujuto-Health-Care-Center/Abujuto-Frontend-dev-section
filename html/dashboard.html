@@ -1,131 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <link rel="stylesheet" href="../css/dashboard-style.css">
-	<title>Abujuto Health Care</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sidebar.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/dashboard-style.css" />
+    <title>Abujuto Health Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+      <link rel="shortcut icon" href="../HTML.img/Abujuto Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/sidebar.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-- Aside-container -->
-      <aside class="side-bar">
-         
-      </aside>
+      <!-- Aside-container -->
+      <aside class="side-bar"></aside>
       <!-- Aside-container End -->
-
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <!-- Main-Section -->
       <main class="main-content">
-          <!-- header-section -->
+        <!-- header-section -->
         <header class="header">
-           <h1>Super Admin Dashboard</h1>
-           <div class="header-bar">
+          <h1>Super Admin Dashboard</h1>
+          <div class="header-bar">
             <div class="search-container">
-               <label for="search-input" class="visually-hidden"></label>
-               <img src="../assets/icons/assets/icons/search.png" alt="search">
-               <input type="search" id="search-input" placeholder="Search patients or records..">
-           </div>
-             <div class="header-icons">
-               <div class="notification-bell">
-                  <img src="../assets/icons/assets/icons/notification-bell.png" alt="notification">
-                  <img src="../assets/icons/assets/icons/Background+Border.png" alt="dot">
-               </div>
-               <div class="new-entry">
-                  <img src="../assets/icons/assets/icons/+ icon.png" alt="add-ntn">
-                  <h6>New Entry</h6>
-               </div>
+              <label for="search-input" class="visually-hidden"></label>
+              <img src="../assets/icons/assets/icons/search.png" alt="search" />
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search patients or records.."
+              />
+            </div>
+            <div class="header-icons">
+              <div class="notification-bell">
+                <img
+                  src="../assets/icons/assets/icons/notification-bell.png"
+                  alt="notification"
+                />
+                <img
+                  src="../assets/icons/assets/icons/Background+Border.png"
+                  alt="dot"
+                />
+              </div>
+              <div class="new-entry">
+                <img
+                  src="../assets/icons/assets/icons/+ icon.png"
+                  alt="add-ntn"
+                />
+                <h6>New Entry</h6>
               </div>
             </div>
-            
-         </header>
+          </div>
+        </header>
         <!-- header-section-end -->
 
         <!-- Statistics-Card -->
-         <div class="stats-card">
-  <div class="card-section">
-    <div class="card-top">
-      <img src="../assets/icons/assets/icons/Contact.png" alt="total-patient">
-      <div class="trend-bandge trend-up"><span>Live</span></div>
-    </div>
-    <p class="card-label">Total Patients</p>
-    <h2 class="card-value" id="stat-total-patients">—</h2>
-  </div>
+        <div class="stats-card">
+          <div class="card-section">
+            <div class="card-top">
+              <img
+                src="../assets/icons/assets/icons/Contact.png"
+                alt="total-patient"
+              />
+              <div class="trend-bandge trend-up"><span>Live</span></div>
+            </div>
+            <p class="card-label">Total Patients</p>
+            <h2 class="card-value" id="stat-total-patients">—</h2>
+          </div>
 
-  <div class="card-section">
-    <div class="card-top">
-      <img src="../assets/icons/assets/icons/calendar.png" alt="today's visit">
-      <div class="trend-bandge trend-up"><span>Today</span></div>
-    </div>
-    <p class="card-label">Today's Appointments</p>
-    <h2 class="card-value" id="stat-today-appointments">—</h2>
-  </div>
+          <div class="card-section">
+            <div class="card-top">
+              <img
+                src="../assets/icons/assets/icons/calendar.png"
+                alt="today's visit"
+              />
+              <div class="trend-bandge trend-up"><span>Today</span></div>
+            </div>
+            <p class="card-label">Today's Appointments</p>
+            <h2 class="card-value" id="stat-today-appointments">—</h2>
+          </div>
 
-  <div class="card-section">
-    <div class="card-top">
-      <img src="../assets/icons/assets/icons/notepad.png" alt="new patients">
-      <div class="trend-bandge trend-up"><span>Today</span></div>
-    </div>
-    <p class="card-label">New Patients Today</p>
-    <h2 class="card-value" id="stat-new-patients">—</h2>
-  </div>
+          <div class="card-section">
+            <div class="card-top">
+              <img
+                src="../assets/icons/assets/icons/notepad.png"
+                alt="new patients"
+              />
+              <div class="trend-bandge trend-up"><span>Today</span></div>
+            </div>
+            <p class="card-label">New Patients Today</p>
+            <h2 class="card-value" id="stat-new-patients">—</h2>
+          </div>
 
-  <div class="card-section">
-    <div class="card-top">
-      <img src="../assets/icons/assets/icons/Banknotes.png" alt="scheduled">
-      <div class="trend-bandge trend-up"><span>+</span></div>
-    </div>
-    <p class="card-label">Scheduled</p>
-    <h2 class="card-value" id="stat-scheduled">—</h2>
-  </div>
-</div>
-          <!-- Statistics-card-end -->
+          <div class="card-section">
+            <div class="card-top">
+              <img
+                src="../assets/icons/assets/icons/Banknotes.png"
+                alt="scheduled"
+              />
+              <div class="trend-bandge trend-up"><span>+</span></div>
+            </div>
+            <p class="card-label">Scheduled</p>
+            <h2 class="card-value" id="stat-scheduled">—</h2>
+          </div>
+        </div>
+        <!-- Statistics-card-end -->
 
-          <!-- Clinic-Performance -->
-           <section class="dashboard-container">
-  <!-- Chart -->
-  <div class="chart-card">
-    <div class="card-header">
-      <h3>Today's Appointments</h3>
-      <div class="date-filter">
-        <span id="today-date">Today</span>
-      </div>
-    </div>
-    <!-- Appointments Table -->
-    <div class="appointments-table-wrapper">
-      <table class="appointments-table">
-        <thead>
-          <tr>
-            <th>Patient</th>
-            <th>ID</th>
-            <th>Doctor</th>
-            <th>Time</th>
-            <th>Reason</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="appointments-tbody">
-          <tr><td colspan="6" class="table-loading">Loading appointments...</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+        <!-- Clinic-Performance -->
+        <section class="dashboard-container">
+          <!-- Chart -->
+          <div class="chart-card">
+            <div class="card-header">
+              <h3>Today's Appointments</h3>
+              <div class="date-filter">
+                <span id="today-date">Today</span>
+              </div>
+            </div>
+            <!-- Appointments Table -->
+            <div class="appointments-table-wrapper">
+              <table class="appointments-table">
+                <thead>
+                  <tr>
+                    <th>Patient</th>
+                    <th>ID</th>
+                    <th>Doctor</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="appointments-tbody">
+                  <tr>
+                    <td colspan="6" class="table-loading">
+                      Loading appointments...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-  <!-- Quick Actions -->
-  <div class="quick-actions">
-    <h3>Quick Actions</h3>
-    <a href="#" class="quick-action-btn">Add New Patient</a>
-    <a href="#" class="quick-action-btn">Schedule Visit</a>
-    <a href="#" class="quick-action-btn">Issue Invoice</a>
-  </div>
-</section>
+          <!-- Quick Actions -->
+          <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <a href="./add-patient.html" class="quick-action-btn">Add New Patient</a>
+            <a href="./appointments.html" class="quick-action-btn">Schedule Visit</a>
+            <a href="./billing.html" class="quick-action-btn">Issue Invoice</a>
+          </div>
+        </section>
       </main>
     </div>
     <script type="module" src="../js/dashhboard.js/dashboard.js"></script>
-</body>
+  </body>
 </html>

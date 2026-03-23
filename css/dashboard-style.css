@@ -5,8 +5,19 @@
   /* font-family: Arial, sans-serif; */
 }
 
-.body {
+body {
   font-family: 'Inter', sans-serif;
+  background-color: #F6F7F8;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,11 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 p, span, a {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-}
-
-.container{
-  display: grid;
-  grid-template-columns: 256px 1fr;
 }
 
 /* sidebar */
@@ -439,4 +445,113 @@ p, span, a {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: #6b7280;
+}
+
+
+/* ══════════════════════════════════
+   MOBILE RESPONSIVENESS
+   Breakpoint: 768px
+   ══════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Stack sidebar and main vertically */
+  .container {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .side-bar {
+    display: none; /* Hide sidebar on mobile — toggle via JS if needed */
+  }
+
+  .main-content {
+    height: auto;
+    overflow-y: visible;
+  }
+
+  /* Header */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .header h1 {
+    font-size: 14px;
+  }
+
+  .header-bar {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .search-container input {
+    width: 140px;
+  }
+
+  /* Stat cards: 2 columns on mobile */
+  .stats-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 16px 20px;
+    gap: 12px;
+  }
+
+  .card-section {
+    min-height: 140px;
+    padding: 16px;
+  }
+
+  .card-value {
+    font-size: 18px;
+  }
+
+  /* Dashboard bottom: stack chart + quick actions */
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 0 16px 24px;
+  }
+
+  .chart-card {
+    margin-left: 0;
+    overflow-x: auto;
+  }
+
+  /* Appointments table: allow horizontal scroll */
+  .appointments-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .appointments-table {
+    min-width: 540px;
+  }
+
+  .quick-actions {
+    width: 100%;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .stats-card {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 12px 16px;
+  }
+
+  .card-label {
+    font-size: 12px;
+  }
+
+  .search-container input {
+    width: 100px;
+  }
+
+  .new-entry h6 {
+    display: none; /* Show only the + icon on very small screens */
+  }
 }
