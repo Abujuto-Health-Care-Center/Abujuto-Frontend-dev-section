@@ -23,7 +23,7 @@
             <p>Manage and track patient information efficiently</p>
           </div>
 
-          <form action="">
+          <form action="" onsubmit="return false">
             <div class="search-div">
               <img src="../assets/icons/assets/icons/search.png" alt="" />
               <input
@@ -50,7 +50,7 @@
             </div>
             <div>
               <div class="stat-label">Total Patients</div>
-              <div class="stat-value">1,284</div>
+              <div class="stat-value" id="stat-total">—</div>
             </div>
           </div>
 
@@ -60,7 +60,7 @@
             </div>
             <div>
               <div class="stat-label">Active Today</div>
-              <div class="stat-value">42</div>
+              <div class="stat-value" id="stat-active">—</div>
             </div>
           </div>
 
@@ -70,7 +70,7 @@
             </div>
             <div>
               <div class="stat-label">Pending Labs</div>
-              <div class="stat-value">18</div>
+              <div class="stat-value" id="stat-pending">—</div>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
             </div>
             <div>
               <div class="stat-label">In Patient</div>
-              <div class="stat-value">7</div>
+              <div class="stat-value" id="stat-inpatient">—</div>
             </div>
           </div>
         </div>
@@ -96,70 +96,14 @@
           <button class="filter-tab" onclick="setTab(this)">Discharged</button>
         </div>
 
-        <div class="patient-cards">
-                   <div class="patient-card" id="patientCard">
-            <div class="card-header">
-              <img
-                src="../assets/icons/passport.jpg"
-                alt="Patient Avatar"
-                class="avatar"
-                id="patientAvatar"
-              />
-
-              <div class="patient-info">
-                <div class="name-row">
-                  <h2 class="patientName">Oluwaseun Adeyemi</h2>
-                  <span class="patient-id">PAT-2024-001</span>
-                </div>
-
-                <div class="details-row">
-                    <span class="patientGender">Male</span>
-                    <span class="patientAge">42 years</span>
-                    <span class="patientBlood">O+</span>
-                </div>
-              </div>
-
-              <div class="visit-info">
-                <p class="label">LAST VISIT</p>
-                <p class="lastVisit">12 Oct 2023</p>
-              </div>
-            </div>
-
-            <div class="card-footer">
-              <p class="chiefComplaint">Chief Complaint: Hypertension Follow-up</p>
-
-              <div class="actions">
-                <button class="btn edit-btn"><img src="../assets/icons/edit-icon.png" alt="">Edit</button>
-                <button class="btn view-btn"><img src="../assets/icons/eye-Icon.png" alt="">View Profile</button>
-              </div>
-
-            </div>
-          </div>
+        <div class="patient-cards" id="patient-cards-grid">
+          <!-- Cards injected by JS -->
+          <div class="cards-loading">Loading patients...</div>
         </div>
 
-        <div class="pagination">
-          <span class="page-info">Showing 1–6 of 1,284 patients</span>
-          <ul class="pagination mb-0">
-            <li class="page-item disabled">
-              <a class="page-link" href="#"
-                ><i class="bi bi-chevron-left"></i
-              ></a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">&hellip;</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">215</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#"
-                ><i class="bi bi-chevron-right"></i
-              ></a>
-            </li>
-          </ul>
+        <div class="pagination" id="pagination-container">
+          <span class="page-info" id="page-info">Showing patients...</span>
+          <div class="pagination-controls" id="pagination-controls"></div>
         </div>
       </main>
     </div>

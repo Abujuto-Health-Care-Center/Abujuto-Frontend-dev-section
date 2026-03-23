@@ -116,12 +116,12 @@
 
               <div class="gender-div">
                 <div>
-                  <input type="radio" name="gender" value="m" id="Male" />
+                  <input type="radio" name="gender" value="male" id="Male" />
                   <label for="Male">Male</label>
                 </div>
 
                 <div>
-                  <input type="radio" name="gender" value="f" id="Female" />
+                  <input type="radio" name="gender" value="female" id="Female" />
                   <label for="Female">Female</label>
                 </div>
               </div>
@@ -131,10 +131,10 @@
           <div class="form-row">
             <div>
               <label for="mStatus">Marital Status</label>
-              <select>
-                <option>Single</option>
-                <option>Married</option>
-                <option>Divorced</option>
+              <select id="maritalStatus" name="maritalStatus">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
               </select>
             </div>
 
@@ -164,8 +164,8 @@
             </div>
 
             <div>
-              <label for="blood-group">Blood Group</label>
-              <select>
+              <label for="bloodGroup">Blood Group</label>
+              <select id="bloodGroup" name="bloodGroup">
                 <option value="">Select Blood Group</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -188,23 +188,23 @@
 
           <div class="form-row">
             <div>
-              <label for="sName">NHIA Identification Number</label>
+              <label for="nationalId">NIN</label>
               <input
                 type="text"
-                name="sName"
-                id="sName"
-                placeholder="e.g. NHIA12345678"
+                name="nationalId"
+                id="nationalId"
+                placeholder="enter 11 digit NIN number"
               />
             </div>
 
             <div>
-              <label for="fName">NHIA Scheme Type</label>
-              <select name="NHIA_Scheme_type" id="">
-                <option>Formal Sector</option>
-                <option>Public Servant</option>
-                <option>Private Sector</option>
-                <option>Informal Sector</option>
-              </select>
+             <label for="nationalId">NHIA Identification Number</label>
+              <input
+                type="text"
+                name="insuranceNumber"
+                id="insuranceNumber"
+                placeholder="e.g. NHIA12345678"
+              />
             </div>
           </div>
         </section>
@@ -227,11 +227,11 @@
             </div>
 
             <div>
-              <label for="fName">Email Address (Optional)</label>
+              <label for="email">Email Address (Optional)</label>
               <input
-                type="text"
-                name="fName"
-                id="fName"
+                type="email"
+                name="email"
+                id="email"
                 placeholder="patient@example.com"
               />
             </div>
@@ -282,13 +282,13 @@
             </div>
 
             <div>
-              <label for="relationship_kin">Relationship</label>
+              <label for="kin_relationship">Relationship</label>
               <select
                 type="text"
-                name="sName"
-                id="sName"
-                placeholder="Enter first name"
+                name="kin_relationship"
+                id="kin_relationship"
               >
+                <option value="">Select Relationship to Kin</option>
                 <option value="Spouse">Spouse</option>
                 <option value="Brother">Brother</option>
                 <option value="Sister">Sister</option>
@@ -314,7 +314,7 @@
             <div>
               <label for="address_kin">Emergency Address (Optional)</label>
               <input
-                type="text"
+                type="email"
                 name="address_kin"
                 id="address_kin"
                 placeholder="Same as parent / Different Address"
@@ -323,6 +323,19 @@
           </div>
         </section>
 
+<div class="form-error" id="formError">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+  </svg>
+  <span id="formErrorText"></span>
+</div>
+
+<div class="form-success" id="formSuccess">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+  </svg>
+  <span id="formSuccessText"></span>
+</div>
         <div class="button-container">
           <button class="outline-btn" type="reset">Discard Changes</button>
           <button class="primary-btn" id="submitBtn" type="submit">
