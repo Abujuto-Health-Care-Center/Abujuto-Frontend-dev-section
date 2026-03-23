@@ -3,13 +3,30 @@
 // ══════════════════════════════════════════
 const BASE_URL = 'https://abojuto.onrender.com'; // ← change to your real server address
 
-// Where to send each role after login
+// Detect if we're on GitHub Pages and build the correct base path
+function getBasePath() {
+  const path = window.location.pathname;
+  const isGitHubPages = path.includes('.github.io') || 
+                        (path.match(/\//g) || []).length > 1; // Multiple slashes indicate repo folder
+  
+  if (isGitHubPages) {
+    // Extract repo name from path: /repo-name/html/login.html → /repo-name/
+    const parts = path.split('/');
+    const repoName = parts[1];
+    return repoName ? `/${repoName}/` : '/';
+  }
+  return '/'; // Local development
+}
+
+const BASE_PATH = getBasePath();
+
+// Where to send each role after login — using absolute paths
 const ROLE_REDIRECTS = {
-  'doctor':       '../html/dashboard.html',
-  'nurse':        '../html/dashboard.html',
-  'accountant':   '../html/dashboard.html',
-  'admin':        '../html/dashboard.html',
-  'receptionist': '../html/dashboard.html',
+  'doctor':       BASE_PATH + 'html/dashboard.html',
+  'nurse':        BASE_PATH + 'html/dashboard.html',
+  'accountant':   BASE_PATH + 'html/dashboard.html',
+  'admin':        BASE_PATH + 'html/dashboard.html',
+  'receptionist': BASE_PATH + 'html/dashboard.html',
 };
 
 // ── DOM refs ──
