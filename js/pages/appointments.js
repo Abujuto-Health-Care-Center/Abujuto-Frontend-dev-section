@@ -3,7 +3,7 @@ import { renderSideBar } from "../components/sidebar.js";
 // ══════════════════════════════════════════
 //  CONFIG
 // ══════════════════════════════════════════
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://abojuto.onrender.com";
 
 // ── Auth guard ──
 const token =
