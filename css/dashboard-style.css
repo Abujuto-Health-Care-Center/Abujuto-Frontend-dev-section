@@ -326,6 +326,83 @@ p, span, a {
 }
 
 .chart-container {
+  height: 250px;
+}
+
+/* ── APPOINTMENTS TABLE ── */
+.appointments-table-wrapper {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+}
+
+.appointments-table thead tr {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.appointments-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.appointments-table td {
+  padding: 12px 14px;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.appointments-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.table-loading {
+  text-align: center;
+  color: #9ca3af;
+  padding: 30px !important;
+  font-style: italic;
+}
+
+.table-empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 30px !important;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-scheduled  { background: #dbeafe; color: #1d4ed8; }
+.status-completed  { background: #d1fae5; color: #065f46; }
+.status-cancelled  { background: #fee2e2; color: #991b1b; }
+.status-pending    { background: #fef3c7; color: #92400e; }
+
+/* Quick actions */
+.quick-actions {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #eef2f7;
   display: flex;
   flex-direction: column;
   height: 200px;
@@ -384,10 +461,44 @@ p, span, a {
 }
 
 .quick-actions h3 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #111827;
-  margin: 0 0 4px;
+  margin-bottom: 4px;
+}
+
+.quick-action-btn {
+  display: block;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.quick-action-btn:hover {
+  background: #2E6B50;
+  color: #fff;
+  border-color: #2E6B50;
+  transform: translateX(3px);
+}
+
+/* ── AUTH GUARD overlay (shown briefly before redirect) ── */
+.auth-loading {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #6b7280;
 }
 
 .quick-action-btn {
@@ -443,4 +554,3 @@ p, span, a {
 .quick-action-button:active {
   transform: scale(0.98);
 }
-
