@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Àbójútó</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./HTML.img/Abujuto Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login-style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <!-- Left Panel -->
+      <div class="left-panel">
+        <div class="logo">
+          <img src="HTML.img/Abujuto Logo.png" class="first-logo" alt="" />
+          <h2>Àbójútó</h2>
+        </div>
+
+        <div class="left-content">
+          <h1>Where care is accounted for.</h1>
+          <p>
+            Access your specialized dashboard with ease.
+            <b>Àbójútó</b> provides tailored tools for every
+            role in your healthcare facility.
+          </p>
+          <div class="main-image-placeholder">
+            <img src="HTML.img/Abujuto Logo.png" alt="" />
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#"
+            ><div class="icon-placeholder">
+              <img src="../assets/icons/check-Icon.png" alt="" />
+            </div>
+            HIPAA Compliant</a
+          >
+          <a href="#"
+            ><div class="icon-placeholder">
+              <img src="../assets/icons/lock-icon.png" alt="" />
+            </div>
+            End-to-end Encrypted</a
+          >
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <h2>Welcome Back</h2>
+        <p>Choose your role and sign in to continue</p>
+
+        <form action="#" class="login-form" id="loginForm">
+          <!-- ROLE SELECTION — hidden radios, visible labels -->
+          <div class="role-selection">
+            <p>What Do You Do?</p>
+            <div class="role-buttons">
+              <input
+                type="radio"
+                name="role"
+                id="role-doctor"
+                value="doctor"
+                required
+              />
+              <label for="role-doctor">
+                <span class="role-icon">
+                  <!-- stethoscope icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="color: #7aad8e"
+                  >
+                    <path
+                      d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"
+                    />
+                    <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4" />
+                    <circle cx="20" cy="10" r="2" />
+                  </svg>
+                </span>
+                <span>Doctor</span>
+              </label>
+
+              <input type="radio" name="role" id="role-nurse" value="nurse" />
+              <label for="role-nurse">
+                <span class="role-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="color: #7aad8e"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </span>
+                <span>Nurse</span>
+              </label>
+
+              <input
+                type="radio"
+                name="role"
+                id="role-accountant"
+                value="accountant"
+              />
+              <label for="role-accountant">
+                <span class="role-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="color: #7aad8e"
+                  >
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8m-4-4v4" />
+                    <path
+                      d="M7 8h.01M12 8h.01M17 8h.01M7 12h.01M12 12h.01M17 12h.01"
+                    />
+                  </svg>
+                </span>
+                <span>Accountant</span>
+              </label>
+
+              <input type="radio" name="role" id="role-admin" value="admin" />
+              <label for="role-admin">
+                <span class="role-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="color: #7aad8e"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </span>
+                <span>Admin</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- STAFF ID -->
+          <div class="input-field">
+            <label for="staff-id" class="input-label">
+              <!-- ID card icon inline -->
+              <svg
+                class="label-icon-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <path d="M16 10h2M16 14h2M7 10h4v4H7z" />
+              </svg>
+              <span>Staff ID</span>
+            </label>
+            <input
+              type="text"
+              id="staff-id"
+              name="staffId"
+              placeholder="Enter your Staff ID"
+              autocomplete="username"
+            />
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="input-group">
+            <label for="password" class="input-label">
+              <svg
+                class="label-icon-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>Password</span>
+            </label>
+            <div class="input-field-wrapper">
+              <a href="#" class="forgot-password">Forgot Password?</a>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Toggle password visibility"
+                id="togglePassword"
+              >
+                <div class="icon-placeholder">
+                  <svg
+                    id="eyeIcon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="green"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- KEEP ME LOGGED IN -->
+          <div class="checkbox-group">
+            <input type="checkbox" id="keep-logged-in" name="keepLoggedIn" />
+            <label for="keep-logged-in">Keep me logged in on this device</label>
+          </div>
+
+<!-- ERROR MESSAGE -->
+<div class="error-message" id="errorMessage">
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+  </svg>
+  <span id="errorText"></span>
+</div>
+
+<!-- SUBMIT -->
+<button type="submit" class="login-button" id="loginBtn">
+  <div class="btn-spinner"></div>
+  <span class="btn-text">Secure Login</span>
+  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+    <polyline points="10 17 15 12 10 7"/>
+    <line x1="15" y1="12" x2="3" y2="12"/>
+  </svg>
+</button>
+        </form>
+
+        <div class="footer-text">
+          Don't have an account? <a href="#">Contact Administrator</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="copyright-bar">
+        <span
+          >© 2026 <strong>Àbójútó</strong> Systems. All Rights Reserved.</span
+        >
+        <div class="bar-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">System Status</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/login.js/login.js"></script>
+  </body>
+</html>
