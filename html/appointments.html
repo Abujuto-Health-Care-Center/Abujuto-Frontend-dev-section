@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments | Àbójútó</title>
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/appointments.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="side-bar"></aside>
+      <main class="main-content">
+        <div class="header">
+          <div class="search-container">
+            <label for="search-input" class="visually-hidden"></label>
+            <img src="../assets/icons/assets/icons/search.png" alt="search" />
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search patients or records.."
+            />
+          </div>
+
+          <div>
+            <div class="profile">
+              <div class="notification-bell">
+                <img
+                  src="../assets/icons/assets/icons/notification-bell.png"
+                  alt="notification"
+                />
+                <img
+                  src="../assets/icons/assets/icons/Background+Border.png"
+                  alt="dot"
+                />
+              </div>
+              <div class="profile-pics">
+                <img src="../assets/icons/passport.jpg" alt="" />
+              </div>
+              <div>
+                <h6 class="profile-name">Bukola A.</h6>
+                <h6 class="profile-role">Receptionist</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="appointments-section">
+          <div class="schedule">
+            <h1>Schedule Appointment</h1>
+
+            <div class="appointments-btn">
+              <button class="book-appt-btn">
+                <img
+                  src="../assets/icons/assets/icons/+ icon.png"
+                  alt="add-appointment"
+                />
+                <span>Book Appointment</span>
+              </button>
+              <button class="all-appt-btn">All Appointments</button>
+            </div>
+
+            <div class="doctors-div">
+              <h2>Select Doctor</h2>
+              <div class="doctors-list">
+                <div class="list-doctor">
+                  <div class="doctor-initials">JE</div>
+                  <div>
+                    <p class="doctor-name">Dr. Johnson Emma</p>
+                    <p class="doctor-specialty">Pediatrics</p>
+                  </div>
+                </div>
+                <div class="list-doctor">
+                  <div class="doctor-initials">JE</div>
+                  <div>
+                    <p class="doctor-name">Dr. Johnson Emma</p>
+                    <p class="doctor-specialty">Pediatrics</p>
+                  </div>
+                </div>
+                <div class="list-doctor">
+                  <div class="doctor-initials">JE</div>
+                  <div>
+                    <p class="doctor-name">Dr. Johnson Emma</p>
+                    <p class="doctor-specialty">Pediatrics</p>
+                  </div>
+                </div>
+              </div>
+
+              <form class="select-form" action="">
+                <div class="select-date">
+                  <h3>Select Date</h3>
+                  <input type="date" name="" id="" />
+                </div>
+
+                <div class="select-patient">
+                  <h3>Search Patient</h3>
+                  <input
+                    type="text"
+                    placeholder="Search by name or patient ID..."
+                    name=""
+                    id=""
+                  />
+                </div>
+
+                <div class="select-patient">
+                  <h3>View Type</h3>
+                  <select name="visit-type" id="visit-type">
+                    <option value="check-up">check up</option>
+                    <option value="check-up">others</option>
+                  </select>
+                </div>
+
+                <button class="schedule-btn">Schdeule Appointment</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="view-schedules">
+            <div class="appointment-stat">
+              <div class="appt-active appt-stat">
+                <h3 class="active-text">ACTIVE</h3>
+                <h3 class="active-appointment">1</h3>
+              </div>
+
+              <div class="appt-today appt-stat">
+                <h3 class="today-text">TODAY</h3>
+                <h3 class="today-appointment">8</h3>
+              </div>
+            </div>
+
+            <div class="time-slot-div">
+              <div class="scheduler-card" id="schedulerCard">
+                <!-- Header Banner -->
+                <div class="header-banner">
+                  Showing slots for
+                  <strong id="doctorName">Dr. Johnson Emma</strong>
+                  &bull;
+                  <span id="slotDate">Today, 10 March 2026</span>
+                </div>
+
+                <!-- Available Time Slots -->
+                <div class="slots-section">
+                  <div class="section-title">Available Time Slots</div>
+
+                  <!-- Morning -->
+                  <div class="period-label">Morning</div>
+                  <div class="slots-grid" id="morningSlots"></div>
+
+                  <!-- Afternoon -->
+                  <div class="period-label">Afternoon</div>
+                  <div class="slots-grid" id="afternoonSlots"></div>
+                </div>
+
+                <!-- Legend -->
+                <div class="legend">
+                  <div class="legend-item">
+                    <div class="legend-box available"></div>
+                    Available
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-box selected"></div>
+                    Selected
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-box booked"></div>
+                    Booked
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Today's Schedule -->
+                <div class="section-title">Today's Schedule</div>
+                <div class="schedule-list" id="scheduleList"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="../js/pages/appointments.js"></script>
+  </body>
+</html>
