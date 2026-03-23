@@ -9,9 +9,20 @@
   </head>
   <body>
     <div class="container">
-      <aside class="side-bar"></aside>
+      <aside class="side-bar" id="sideBar"></aside>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
       <main class="main-content">
         <div class="header">
+          <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div class="search-container">
             <label for="search-input" class="visually-hidden"></label>
             <img src="../assets/icons/assets/icons/search.png" alt="search" />
@@ -86,32 +97,56 @@
                 </div>
               </div>
 
-              <form class="select-form" action="">
-                <div class="select-date">
-                  <h3>Select Date</h3>
-                  <input type="date" name="" id="" />
-                </div>
+             <form class="select-form" id="appointmentForm" onsubmit="return false">
 
-                <div class="select-patient">
-                  <h3>Search Patient</h3>
-                  <input
-                    type="text"
-                    placeholder="Search by name or patient ID..."
-                    name=""
-                    id=""
-                  />
-                </div>
+  <div class="select-date">
+    <h3>Select Date</h3>
+    <input type="date" name="date" id="appt-date" />
+  </div>
 
-                <div class="select-patient">
-                  <h3>View Type</h3>
-                  <select name="visit-type" id="visit-type">
-                    <option value="check-up">check up</option>
-                    <option value="check-up">others</option>
-                  </select>
-                </div>
+  <div class="select-patient">
+    <h3>Search Patient</h3>
+    <input type="text" id="patient-search" placeholder="Search by name or patient ID..." autocomplete="off" />
+    <div class="patient-suggestions" id="patientSuggestions"></div>
+    <!-- Hidden field to store selected patient ID -->
+    <input type="hidden" id="selected-patient-id" />
+    <div class="selected-patient-tag" id="selectedPatientTag" style="display:none"></div>
+  </div>
 
-                <button class="schedule-btn">Schdeule Appointment</button>
-              </form>
+  <div class="select-patient">
+    <h3>Visit Type</h3>
+    <select name="visit-type" id="visit-type">
+      <option value="new">New Visit</option>
+      <option value="follow-up">Follow-up</option>
+      <option value="check-up">Check-up</option>
+      <option value="emergency">Emergency</option>
+    </select>
+  </div>
+
+  <div class="select-patient">
+    <h3>Reason</h3>
+    <input type="text" id="appt-reason" placeholder="e.g. Routine checkup, Fever..." />
+  </div>
+
+  <div class="select-patient">
+    <h3>Duration (minutes)</h3>
+    <select id="appt-duration">
+      <option value="15">15 mins</option>
+      <option value="30" selected>30 mins</option>
+      <option value="45">45 mins</option>
+      <option value="60">60 mins</option>
+    </select>
+  </div>
+
+  <!-- Feedback banners -->
+  <div class="appt-error" id="apptError" style="display:none"></div>
+  <div class="appt-success" id="apptSuccess" style="display:none"></div>
+
+  <button class="schedule-btn" id="scheduleBtn" type="submit">
+    Schedule Appointment
+  </button>
+
+</form>
             </div>
           </div>
 
@@ -119,12 +154,12 @@
             <div class="appointment-stat">
               <div class="appt-active appt-stat">
                 <h3 class="active-text">ACTIVE</h3>
-                <h3 class="active-appointment">1</h3>
+                <h3 class="active-appointment" id="stat-today">-</h3>
               </div>
 
               <div class="appt-today appt-stat">
                 <h3 class="today-text">TODAY</h3>
-                <h3 class="today-appointment">8</h3>
+                <h3 class="today-appointment" id="stat-active">-</h3>
               </div>
             </div>
 
